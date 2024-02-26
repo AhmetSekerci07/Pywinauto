@@ -20,7 +20,7 @@ app.Dialog.print_control_identifiers()
 # you might need to adjust 'app.Dialog' to correctly reference the window you wish to interact with.
 # Use tools like 'Inspect.exe' (part of the Windows SDK) to explore the UI elements and their identifiers.
 
-''''  
+'''
 # Simple Code 
 
 from pywinauto import application
@@ -31,4 +31,4 @@ pid = application.process_from_module(module=yourExeName)
 app = pywinauto.Application(backend='uia').connect(process=pid)
 app.Dialog.print_control_identifiers()
 
-''''
+'''
