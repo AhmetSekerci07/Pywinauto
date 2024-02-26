@@ -1,9 +1,15 @@
 # I get error many times while setuping PIL library try with PIL only first not with 'Image Grab'
 # pip install Pillow
-
+from datetime import datetime
 
 from PIL import ImageGrab
+
+
 import os
+
+screenshots_directory = "screenshots"
+if not os.path.exists(screenshots_directory):
+    os.makedirs(screenshots_directory)
 
 class Screenshot:
     """
@@ -38,3 +44,31 @@ class Screenshot:
         screen.save(screenshot_path)
         # Print a confirmation message.
         print(f"Screenshot saved as {screenshot_path}")
+
+    def save_screenshot_with_timestamp(self, prefix: object) -> object:
+        timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        filename = f"{prefix}_{timestamp}.png"
+        self.take_screenshot(filename)
+
+#How I run in main
+
+def test_a():
+    screenshot_obj = Screenshot()
+
+    screenshot_obj.save_screenshot_with_timestamp("(a)1004")
+
+
+
+'''
+ignore
+ C:\Program Files\JetBrains\PyCharm Community Edition 2022.3\plugins\python-ce\helpers\pycharm\_jb_pytest_runner.py:8: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import iter_entry_points message 
+  
+  
+  import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+
+
+
+'''
