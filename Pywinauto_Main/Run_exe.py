@@ -16,7 +16,7 @@ app.window(title_re=".*Canfield Capture").wait('visible', timeout=30)
 
 from pywinauto import application
 
-yourExeName = "Asekerci"
+yourExeName = "YourExeName"
 pid = application.process_from_module(module=yourExeName)
 app = pywinauto.Application(backend='uia').connect(process=pid)
 
